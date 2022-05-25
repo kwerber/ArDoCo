@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import edu.kit.kastel.mcse.ardoco.core.common.util.CommonTextToolsConfig;
+import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.WordSimLoader;
 import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.measures.fastText.DL4JFastTextDataSource;
 import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.measures.fastText.FastTextMeasure;
 import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.measures.glove.GloveMeasure;
@@ -74,34 +75,34 @@ public class ExhaustiveEvaluation {
         }
 
         if (CommonTextToolsConfig.SEWORDSIM_ENABLED) {
-            plans.addAll(getSEWordSimPlans(Path.of("sewordsim.sqlite")));
+            plans.addAll(getSEWordSimPlans(Path.of("data", "sewordsim.sqlite")));
         }
 
         if (CommonTextToolsConfig.GLOVE_ENABLED) {
-            plans.addAll(getGlovePlans(Path.of("glove_cc_840B_300d.sqlite")));
-            plans.addAll(getGlovePlans(Path.of("glove_wikigiga_300d.sqlite")));
-            plans.addAll(getGlovePlans(Path.of("glove_wikigiga_200d.sqlite")));
-            plans.addAll(getGlovePlans(Path.of("glove_wikigiga_100d.sqlite")));
-            plans.addAll(getGlovePlans(Path.of("glove_wikigiga_50d.sqlite")));
-            plans.addAll(getGlovePlans(Path.of("glove_twitter_200d.sqlite")));
-            plans.addAll(getGlovePlans(Path.of("glove_twitter_100d.sqlite")));
-            plans.addAll(getGlovePlans(Path.of("glove_twitter_50d.sqlite")));
-            plans.addAll(getGlovePlans(Path.of("glove_twitter_25d.sqlite")));
+            plans.addAll(getGlovePlans(Path.of("data", "glove_cc_840B_300d.sqlite")));
+            plans.addAll(getGlovePlans(Path.of("data", "glove_wikigiga_300d.sqlite")));
+            plans.addAll(getGlovePlans(Path.of("data", "glove_wikigiga_200d.sqlite")));
+            plans.addAll(getGlovePlans(Path.of("data", "glove_wikigiga_100d.sqlite")));
+            plans.addAll(getGlovePlans(Path.of("data", "glove_wikigiga_50d.sqlite")));
+            plans.addAll(getGlovePlans(Path.of("data", "glove_twitter_200d.sqlite")));
+            plans.addAll(getGlovePlans(Path.of("data", "glove_twitter_100d.sqlite")));
+            plans.addAll(getGlovePlans(Path.of("data", "glove_twitter_50d.sqlite")));
+            plans.addAll(getGlovePlans(Path.of("data", "glove_twitter_25d.sqlite")));
         }
 
         if (CommonTextToolsConfig.FASTTEXT_ENABLED) {
-            plans.addAll(getFastTextPlans(Path.of("cc.en.300.bin")));
-            plans.addAll(getFastTextPlans(Path.of("crawl-300d-2M-subword.bin")));
-            plans.addAll(getFastTextPlans(Path.of("wiki-news-300d-1M-subword.bin")));
+            plans.addAll(getFastTextPlans(Path.of("data", "cc.en.300.bin")));
+            plans.addAll(getFastTextPlans(Path.of("data", "crawl-300d-2M-subword.bin")));
+            plans.addAll(getFastTextPlans(Path.of("data", "wiki-news-300d-1M-subword.bin")));
         }
 
         if (CommonTextToolsConfig.WORDNET_ENABLED) {
-            plans.addAll(getWordNetPlans(Path.of("wordNet_dict/")));
+            plans.addAll(getWordNetPlans(Path.of("data", "wordNet_dict/")));
         }
 
         if (CommonTextToolsConfig.NASARI_ENABLED) {
-            plans.addAll(getNasariPlans(Path.of("nasari_embed_english.sqlite")));
-            plans.addAll(getNasariPlans(Path.of("nasari_embed_umbc.sqlite")));
+            plans.addAll(getNasariPlans(Path.of("data", "nasari_embed_english.sqlite")));
+            plans.addAll(getNasariPlans(Path.of("data", "nasari_embed_umbc.sqlite")));
         }
 
         return plans;

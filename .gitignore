@@ -7,6 +7,8 @@ tmp*
 .vscode/*
 
 tests/eval_results/
+tests/results/
+tests/data/
 
 tests/babelnet_cache.json
 babelnet_cache.json
