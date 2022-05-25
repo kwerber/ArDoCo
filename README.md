@@ -12,7 +12,7 @@ Before launching the evaluation, some things need to be considered:
   - The evaluation only cares about the `ENABLED` settings. Thresholds and other values are ignored.
 - The evaluation script assumes that the data sources exist in the working directory with specific file names.
   - The working directory will be the `tests` folder
-  - The following file names are expected for the data sources:
+  - The following file/directory names are expected for the data sources:
     - `sewordsim.sqlite`
     - `glove_cc_840B_300d.sqlite`
     - `glove_wikigiga_300d.sqlite`
@@ -26,7 +26,7 @@ Before launching the evaluation, some things need to be considered:
     - `cc.en.300.bin` (for fastText)
     - `crawl-300d-2M-subword.bin` (for fastText)
     - `wiki-news-300d-1M-subword.bin` (for fastText)
-    - `wordNet_dict`
+    - `wordNet_dict` (the WordNet 3.1 dict/ directory)
     - `nasari_embed_english.sqlite`
     - `nasari_embed_umbc.sqlite`
   - If any of these files are missing, the respective evaluation plans are skipped
