@@ -39,12 +39,18 @@ public class WordSimLoader {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WordSimLoader.class);
 
+    public static boolean PREVENT_LOAD = false;
+
     /**
      * Loads and returns the word similarity measures that should be enabled according to {@link CommonTextToolsConfig}.
      *
      * @return a list of word similarity measures
      */
     public static List<WordSimMeasure> loadUsingProperties() {
+        if (PREVENT_LOAD) {
+            return Collections.emptyList();
+        }
+
         try {
             var list = new ArrayList<WordSimMeasure>();
 

@@ -51,6 +51,8 @@ public class ExhaustiveEvaluation {
         Files.createDirectories(resultDir);
         Files.createDirectories(csvDir);
 
+        WordSimLoader.PREVENT_LOAD = true;
+
         new Evaluator(plans, resultDir, overwriteExistingResults).execute();
 
         new EvalCSVGenerator(resultDir, csvDir, overwriteExistingResults).run();
