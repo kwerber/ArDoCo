@@ -8,28 +8,28 @@ It also contains information about how to reproduce this evaluation.
 Before launching the evaluation, some things need to be considered:
 
 - The `CommonTextToolsConfig.properties` can be used to decide which measures will be evaluated
-- This file is located at: `util/src/main/resources/configs/CommonTextToolsConfig.properties`
-- The evaluation only cares about the `ENABLED` settings. Thresholds and other values are ignored.
+  - This file is located at: `util/src/main/resources/configs/CommonTextToolsConfig.properties`
+  - The evaluation only cares about the `ENABLED` settings. Thresholds and other values are ignored.
 - The evaluation script assumes that the data sources exist in the working directory with specific file names.
-- The working directory will be the `tests` folder
-- The following file names are expected for the data sources:
-	- `sewordsim.sqlite`
-	- `glove_cc_840B_300d.sqlite`
-	- `glove_wikigiga_300d.sqlite`
-	- `glove_wikigiga_200d.sqlite`
-	- `glove_wikigiga_100d.sqlite`
-	- `glove_wikigiga_50d.sqlite`
-	- `glove_twitter_200d.sqlite`
-	- `glove_twitter_100d.sqlite`
-	- `glove_twitter_50d.sqlite`
-	- `glove_twitter_25d.sqlite`
-	- `cc.en.300.bin` (for fastText)
-	- `crawl-300d-2M-subword.bin` (for fastText)
-	- `wiki-news-300d-1M-subword.bin` (for fastText)
-	- `wordNet_dict`
-	- `nasari_embed_english.sqlite`
-	- `nasari_embed_umbc.sqlite`
-- If any of these files are missing, the respective evaluation plans are skipped
+  - The working directory will be the `tests` folder
+  - The following file names are expected for the data sources:
+    - `sewordsim.sqlite`
+    - `glove_cc_840B_300d.sqlite`
+    - `glove_wikigiga_300d.sqlite`
+    - `glove_wikigiga_200d.sqlite`
+    - `glove_wikigiga_100d.sqlite`
+    - `glove_wikigiga_50d.sqlite`
+    - `glove_twitter_200d.sqlite`
+    - `glove_twitter_100d.sqlite`
+    - `glove_twitter_50d.sqlite`
+    - `glove_twitter_25d.sqlite`
+    - `cc.en.300.bin` (for fastText)
+    - `crawl-300d-2M-subword.bin` (for fastText)
+    - `wiki-news-300d-1M-subword.bin` (for fastText)
+    - `wordNet_dict`
+    - `nasari_embed_english.sqlite`
+    - `nasari_embed_umbc.sqlite`
+  - If any of these files are missing, the respective evaluation plans are skipped
 
 To execute the evaluation, run the following maven command:
 
