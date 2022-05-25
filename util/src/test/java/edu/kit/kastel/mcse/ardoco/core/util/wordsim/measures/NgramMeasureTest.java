@@ -1,14 +1,15 @@
 /* Licensed under MIT 2022. */
 package edu.kit.kastel.mcse.ardoco.core.util.wordsim.measures;
 
-import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.ComparisonContext;
-import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.measures.ngram.NgramMeasure;
-import org.apache.commons.text.similarity.LevenshteinDistance;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.apache.commons.text.similarity.LevenshteinDistance;
+import org.junit.jupiter.api.Test;
+
+import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.ComparisonContext;
+import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.measures.ngram.NgramMeasure;
 
 /**
  * Tests for the {@link NgramMeasure}.

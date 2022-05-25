@@ -1,17 +1,16 @@
+/* Licensed under MIT 2022. */
 package edu.kit.kastel.mcse.ardoco.core.tests.integration.tracelinks.eval;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 public class EvalResult {
 
-    private static final Gson GSON = new GsonBuilder()
-            .registerTypeAdapter(TestLink.class, new TestLink.TestLinkSerde())
-            .create();
+    private static final Gson GSON = new GsonBuilder().registerTypeAdapter(TestLink.class, new TestLink.TestLinkSerde()).create();
 
     public static EvalResult fromJsonString(String jsonStr) {
         return GSON.fromJson(jsonStr, EvalResult.class);

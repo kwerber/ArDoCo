@@ -1,9 +1,9 @@
 /* Licensed under MIT 2022. */
 package edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.deletelater;
 
-import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.WordSimMeasure;
-
 import java.util.Objects;
+
+import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.WordSimMeasure;
 
 /**
  * This class will probably be deleted in the future.
@@ -42,7 +42,8 @@ public final class MeasureResult {
         return score;
     }
 
-    @Override public boolean equals(Object obj) {
+    @Override
+    public boolean equals(Object obj) {
         if (obj == this)
             return true;
         if (obj == null || obj.getClass() != this.getClass())
@@ -51,11 +52,13 @@ public final class MeasureResult {
         return Objects.equals(this.measure, that.measure) && this.accepted == that.accepted;
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(measure, accepted);
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         return "MeasureResult[" + "measure=" + measure + ", " + "accepted=" + accepted + ']';
     }
 

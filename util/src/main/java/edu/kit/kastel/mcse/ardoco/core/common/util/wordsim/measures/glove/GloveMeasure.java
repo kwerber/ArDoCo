@@ -1,4 +1,11 @@
+/* Licensed under MIT 2022. */
 package edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.measures.glove;
+
+import java.nio.file.Path;
+import java.sql.SQLException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import edu.kit.kastel.mcse.ardoco.core.common.util.CommonTextToolsConfig;
 import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.ComparisonContext;
@@ -6,16 +13,11 @@ import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.deletelater.Compariso
 import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.vector.RetrieveVectorException;
 import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.vector.VectorBasedWordSimMeasure;
 import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.vector.VectorSqliteDatabase;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.nio.file.Path;
-import java.sql.SQLException;
 
 /**
- * This word similarity measures utilizes GloVe trained word vector representations to calculate word similarity.
- * It retrieves vectors for each word and compares them using cosine similarity.
- * This measure additionally manages a cache to improve lookup speeds.
+ * This word similarity measures utilizes GloVe trained word vector representations to calculate word similarity. It
+ * retrieves vectors for each word and compares them using cosine similarity. This measure additionally manages a cache
+ * to improve lookup speeds.
  */
 public class GloveMeasure extends VectorBasedWordSimMeasure {
 
@@ -49,7 +51,8 @@ public class GloveMeasure extends VectorBasedWordSimMeasure {
         }
     }
 
-    @Override public boolean areWordsSimilar(ComparisonContext ctx) {
+    @Override
+    public boolean areWordsSimilar(ComparisonContext ctx) {
         double similarity = Double.NaN;
 
         try {

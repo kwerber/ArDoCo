@@ -1,16 +1,17 @@
 /* Licensed under MIT 2022. */
 package edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.measures.sewordsim;
 
+import java.nio.file.Path;
+import java.sql.SQLException;
+import java.util.Objects;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import edu.kit.kastel.mcse.ardoco.core.common.util.CommonTextToolsConfig;
 import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.ComparisonContext;
 import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.WordSimMeasure;
 import edu.kit.kastel.mcse.ardoco.core.common.util.wordsim.deletelater.ComparisonStats;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.nio.file.Path;
-import java.sql.SQLException;
-import java.util.Objects;
 
 /**
  * This word similarity measures utilizes the SEWordSim database from Tian et al. 2014
@@ -48,23 +49,22 @@ public class SEWordSimMeasure implements WordSimMeasure {
 
     @Override
     public boolean areWordsSimilar(ComparisonContext ctx) {
-		double similarity = Double.NaN;
+        double similarity = Double.NaN;
 
-		try {
-			similarity = this.dataSource.getSimilarity(ctx.firstTerm(), ctx.secondTerm()).orElse(Double.NaN);
-		}
-		catch (SQLException e) {
-			LOGGER.error("Failed to query the SEWordSim database for word comparison: " + ctx, e);
-			return false;
-		}
+        try {
+            similarity = this.dataSource.getSimilarity(ctx.firstTerm(), ctx.secondTerm()).orElse(Double.NaN);
+        } catch (SQLException e) {
+            LOGGER.error("Failed to query the SEWordSim database for word comparison: " + ctx, e);
+            return false;
+        }
 
-		if (Double.isNaN(similarity)) {
-			return false; // words are probably missing from the database
-		}
+        if (Double.isNaN(similarity)) {
+            return false; // words are probably missing from the database
+        }
 
-	    ComparisonStats.recordScore(similarity);
+        ComparisonStats.recordScore(similarity);
 
-		return similarity >= this.similarityThreshold;
+        return similarity >= this.similarityThreshold;
     }
 
 }
