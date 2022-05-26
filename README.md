@@ -1,5 +1,7 @@
 # Evaluation of Word Similarity Measures on ArDoCo
 
+[![DOI](https://zenodo.org/badge/454341079.svg)](https://zenodo.org/badge/latestdoi/454341079)
+
 This branch contains the state of ArDoCo that was used to perform the evaluation for my bachelor's thesis.
 It also contains information about how to reproduce this evaluation.
 
@@ -49,9 +51,9 @@ docker build -t ardoco .
 The docker image expects two volumes to exist:
 
 - The results volume at `/ardoco/tests/results/`
-- This is where the evaluation results are stored
+  - This is where the evaluation results are stored
 - The data volume at `/ardoco/tests/data/`
-- This is where all data sources must be located
+  - This is where all data sources must be located
 
 After the image is built, it can be run like any other docker image:
 
@@ -72,7 +74,7 @@ mvn -DfailIfNoTests=false -Dtest=ExhaustiveEvaluation test
 Some of the evaluated measures require data sources like word vector embeddings or other information.
 The exact data sources that were used for my thesis can be downloaded from the following DOI:
 
-TODO:LINKHERE
+https://doi.org/10.5281/zenodo.6580280
 
 The linked resource also contains the detailed evaluation results some of which where displayed as graphs in my
 thesis.
