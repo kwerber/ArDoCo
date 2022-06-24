@@ -1,13 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Inconstistency Generation" href="../inconsistencyGeneration/" /><link rel="prev" title="Recommendation Generation" href="../recommendationGeneration/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Inconstistency Generation" href="../inconsistencyGeneration/" /><link rel="prev" title="Recommendation Generation" href="../recommendationGeneration/" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Connection Generation - </title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -201,7 +202,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -215,8 +217,8 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="connection-generation">
-<h1>Connection Generation<a class="headerlink" href="#connection-generation" title="Permalink to this headline">#</a></h1>
+          <section id="connection-generation">
+<h1>Connection Generation<a class="headerlink" href="#connection-generation" title="Permalink to this heading">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This site is deprecated</p>
@@ -226,15 +228,15 @@ The goal in this stage is to identify similar elements on both sides.</p>
 <p>The agent has a state and multiple analyzers/ solvers.
 The analyzer/ solvers and their parameters can be specified in the <a class="reference external" href="https://github.com/ArDoCo/Core/blob/main/src/main/resources/config.properties">configuration</a>.
 The <a class="reference external" href="https://github.com/ArDoCo/Core/blob/main/src/main/java/modelconnector/connectionGenerator/state/ConnectionState.java">Connection State</a> is a blackboard and stores all results of the analyzers/ solvers of the agent.</p>
-<img alt="center" src="../../../_images/ConnectionGeneration.PNG"/>
-<div class="section" id="analyzers">
-<h2>Analyzers<a class="headerlink" href="#analyzers" title="Permalink to this headline">#</a></h2>
+<img alt="center" src="../../../_images/ConnectionGeneration.PNG" />
+<section id="analyzers">
+<h2>Analyzers<a class="headerlink" href="#analyzers" title="Permalink to this heading">#</a></h2>
 <p>Currently, the Connection Generator has no analyzers.</p>
-</div>
-<div class="section" id="solvers">
-<h2>Solvers<a class="headerlink" href="#solvers" title="Permalink to this headline">#</a></h2>
-<div class="section" id="instance-connection-solver">
-<h3>Instance Connection Solver<a class="headerlink" href="#instance-connection-solver" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="solvers">
+<h2>Solvers<a class="headerlink" href="#solvers" title="Permalink to this heading">#</a></h2>
+<section id="instance-connection-solver">
+<h3>Instance Connection Solver<a class="headerlink" href="#instance-connection-solver" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://github.com/ArDoCo/Core/blob/main/src/main/java/modelconnector/connectionGenerator/solvers/InstanceConnectionSolver.java">Instance Connection Solver</a>:
 This solver connects recommended instances and model instances.
 For this, it runs through the model instances of the model extraction state.
@@ -243,9 +245,9 @@ For the recommended instances with the most similar name, an instance link is ad
 If there are multiple, most similar recommended instances, links are created for all of them.
 For recommended instances, without a specified type, the probability is decreased.
 Thus, instance links that include a type specification are preferred.</p>
-</div>
-<div class="section" id="relation-connection-solver">
-<h3>Relation Connection Solver<a class="headerlink" href="#relation-connection-solver" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="relation-connection-solver">
+<h3>Relation Connection Solver<a class="headerlink" href="#relation-connection-solver" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://github.com/ArDoCo/Core/blob/main/src/main/java/modelconnector/connectionGenerator/solvers/RelationConnectionSolver.java">Relation Connection Solver</a>:
 The relation connection solver works similar to the instance connection solver.
 Instead of connecting instances, it connects relations.
@@ -257,9 +259,9 @@ Thereby, multiple combinations of relations with the most similar participants a
 If for every (model) instance participant exactly one corresponding recommended instance exists, the relation link between both is added to the connection state.
 The order of the participants is matched to the model relation.
 If no match can be found, it is tried to find a recommended relation that has the participants in the wrong way round.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
         </article>
       </div>
@@ -344,6 +346,7 @@ If no match can be found, it is tried to find a recommended relation that has th
 </div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     </body>
